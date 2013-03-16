@@ -67,6 +67,8 @@ tar zxvf uniqush-push_1.4.1_x86_64.tar.gz
 
 echo "server starting"
 
+cat ./uniqush-push_1.4.1_x86_64/uniqush-push.conf
+
 ./uniqush-push_1.4.1_x86_64/uniqush-push ./uniqush-push_1.4.1_x86_64/uniqush-push.conf
 
 
