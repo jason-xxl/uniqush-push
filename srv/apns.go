@@ -97,6 +97,9 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 			psp.VolatileData["skipverify"] = "true"
 		}
 	}
+
+	logger.Infof("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
+
 	if sandbox, ok := kv["sandbox"]; ok {
 		if sandbox == "true" {
 			psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
