@@ -108,7 +108,7 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 		}
 	}
 	if addr, ok := kv["addr"]; ok {
-		fmt.Println("BuildPushServiceProviderFromMap:addr: %v", addr)
+		//fmt.Println("BuildPushServiceProviderFromMap:addr: %v", addr)
 		psp.VolatileData["addr"] = addr
 		return nil
 	}
