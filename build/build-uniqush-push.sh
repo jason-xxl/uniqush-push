@@ -3,6 +3,11 @@
 TEMP=`pwd`/tmpgopath
 LICENSE=Apache-2.0
 
+rm -rf $TEMP
+rm -rf *.deb
+rm -rf *.rpm
+rm -rf *.tar.gz
+
 mkdir -p $TEMP/bin
 mkdir -p $TEMP/src
 mkdir -p $TEMP/pkg
@@ -43,7 +48,6 @@ EOF
 chmod +x $TARBALLDIR/install.sh
 tar czvf $TARBALLNAME.tar.gz $TARBALLNAME
 
-rm -rf $TEMP
 rm -rf $BUILD
 rm -rf $TARBALLDIR
 rm -f uniqush-push
