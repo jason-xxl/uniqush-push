@@ -59,7 +59,7 @@ tar czvf $TARBALLNAME.tar.gz $TARBALLNAME
 
 rm -rf $BUILD
 rm -rf $TARBALLDIR
-rm -f uniqush-push
+#rm -f uniqush-push
 rm -f uniqush-push.conf
 rm -f $LICENSE 
 
