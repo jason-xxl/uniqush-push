@@ -9,8 +9,6 @@ mkdir -p $TEMP/pkg
 
 GOBIN=$TEMP/bin GOPATH=$TEMP go get github.com/jason-xxl/uniqush-push
 
-exit 0
-
 VERSION=`$TEMP/bin/uniqush-push --version | sed 's/uniqush-push //'`
 
 BUILD=`pwd`/uniqush-push-$VERSION
