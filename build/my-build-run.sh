@@ -29,7 +29,9 @@ BUILD=`pwd`/uniqush-push-$VERSION
 mkdir -p $BUILD/usr/bin
 mkdir -p $BUILD/etc/uniqush/
 
-ARCH=`uname -m`
+#ARCH=`uname -m`
+ARCH="x86_64"
+
 
 cp $TEMP/bin/uniqush-push $BUILD/usr/bin
 cp $TEMP/src/github.com/jason-xxl/uniqush-push/conf/uniqush-push.conf $BUILD/etc/uniqush
