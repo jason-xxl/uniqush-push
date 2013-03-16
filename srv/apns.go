@@ -98,10 +98,10 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 		}
 	}
 
-	fmt.Println("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
+	//fmt.Println("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
 
 	if sandbox, ok := kv["sandbox"]; ok {
-		fmt.Println("BuildPushServiceProviderFromMap:equal: %v", sandbox == "true")
+		//fmt.Println("BuildPushServiceProviderFromMap:equal: %v", sandbox == "true")
 		if sandbox == "true" {
 			psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
 			return nil
@@ -113,7 +113,7 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 		return nil
 	}
 	psp.VolatileData["addr"] = "gateway.push.apple.com:2195"
-	psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
+	//psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
 	return nil
 }
 
@@ -400,7 +400,7 @@ func connectAPNS(psp *PushServiceProvider) (net.Conn, error) {
 			conf.InsecureSkipVerify = true
 		}
 	}
-
+	fmt.Println("connectAPNS: %v", psp.VolatileData["addr"])
 	tlsconn, err := tls.Dial("tcp", psp.VolatileData["addr"], conf)
 	if err != nil {
 		return nil, err
