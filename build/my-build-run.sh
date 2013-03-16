@@ -5,6 +5,8 @@ git add .
 git commit -am"+sth"
 git push
 
+cd ..
+
 TEMP=`pwd`/tmpgopath
 LICENSE=Apache-2.0
 
@@ -62,6 +64,9 @@ rm -f uniqush-push.conf
 rm -f $LICENSE 
 
 tar zxvf uniqush-push_1.4.1_x86_64.tar.gz
+
+echo "server starting"
+
 ./uniqush-push_1.4.1_x86_64/uniqush-push ./uniqush-push_1.4.1_x86_64/uniqush-push.conf
 
 
