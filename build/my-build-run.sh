@@ -65,9 +65,6 @@ rm -f $LICENSE
 
 tar zxvf uniqush-push_1.4.1_x86_64.tar.gz
 
-
-cat ./uniqush-push_1.4.1_x86_64/uniqush-push.conf
-
 echo "server started."
 ./uniqush-push_1.4.1_x86_64/uniqush-push -config="./uniqush-push_1.4.1_x86_64/uniqush-push.conf"
 
