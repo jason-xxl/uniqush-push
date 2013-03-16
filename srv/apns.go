@@ -98,7 +98,7 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 		}
 	}
 
-	logger.Infof("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
+	fmt.Println("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
 
 	if sandbox, ok := kv["sandbox"]; ok {
 		if sandbox == "true" {
