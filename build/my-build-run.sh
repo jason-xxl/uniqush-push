@@ -1,5 +1,10 @@
 #!/bin/sh
 
+cd uniqush-push
+git add .
+git commit -am"+sth"
+git push
+
 TEMP=`pwd`/tmpgopath
 LICENSE=Apache-2.0
 
