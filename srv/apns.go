@@ -108,6 +108,7 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 		return nil
 	}
 	psp.VolatileData["addr"] = "gateway.push.apple.com:2195"
+	psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
 	return nil
 }
 
@@ -616,4 +617,3 @@ func (self *apnsPushService) pushWorker(psp *PushServiceProvider, reqChan chan *
 func (self *apnsPushService) SetErrorReportChan(errChan chan<- error) {
 	return
 }
-
