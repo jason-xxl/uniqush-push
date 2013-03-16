@@ -7,7 +7,9 @@ mkdir -p $TEMP/bin
 mkdir -p $TEMP/src
 mkdir -p $TEMP/pkg
 
-GOBIN=$TEMP/bin GOPATH=$TEMP go get github.com/uniqush/uniqush-push
+GOBIN=$TEMP/bin GOPATH=$TEMP go get github.com/jason-xxl/uniqush-push
+
+exit 0
 
 VERSION=`$TEMP/bin/uniqush-push --version | sed 's/uniqush-push //'`
 
@@ -18,8 +20,8 @@ mkdir -p $BUILD/etc/uniqush/
 ARCH=`uname -m`
 
 cp $TEMP/bin/uniqush-push $BUILD/usr/bin
-cp $TEMP/src/github.com/uniqush/uniqush-push/conf/uniqush-push.conf $BUILD/etc/uniqush
-cp $TEMP/src/github.com/uniqush/uniqush-push/LICENSE $LICENSE
+cp $TEMP/src/github.com/jason-xxl/uniqush-push/conf/uniqush-push.conf $BUILD/etc/uniqush
+cp $TEMP/src/github.com/jason-xxl/uniqush-push/LICENSE $LICENSE
 
 fpm -s dir -t rpm -v $VERSION -n uniqush-push --license=$LICENSE --maintainer="Nan Deng" -d redis --vendor "uniqush" --url="http://uniqush.org" --category Network --description "Uniqush is a free and open source software which provides a unified push service for server-side notification to apps on mobile devices" -a $ARCH -C $BUILD .
 
@@ -30,7 +32,7 @@ TARBALLDIR=`pwd`/$TARBALLNAME
 mkdir -p $TARBALLDIR
 cp $LICENSE $TARBALLDIR
 cp $TEMP/bin/uniqush-push $TARBALLDIR
-cp $TEMP/src/github.com/uniqush/uniqush-push/conf/uniqush-push.conf $TARBALLDIR/uniqush-push.conf
+cp $TEMP/src/github.com/jason-xxl/uniqush-push/conf/uniqush-push.conf $TARBALLDIR/uniqush-push.conf
 
 cat > $TARBALLNAME/install.sh << EOF
 #!/bin/sh
