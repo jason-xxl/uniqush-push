@@ -101,12 +101,14 @@ func (p *apnsPushService) BuildPushServiceProviderFromMap(kv map[string]string, 
 	fmt.Println("BuildPushServiceProviderFromMap: kv[\"sandbox\"] = %v", kv["sandbox"])
 
 	if sandbox, ok := kv["sandbox"]; ok {
+		fmt.Println("BuildPushServiceProviderFromMap:equal: %v", sandbox == "true")
 		if sandbox == "true" {
 			psp.VolatileData["addr"] = "gateway.sandbox.push.apple.com:2195"
 			return nil
 		}
 	}
 	if addr, ok := kv["addr"]; ok {
+		fmt.Println("BuildPushServiceProviderFromMap:addr: %v", addr)
 		psp.VolatileData["addr"] = addr
 		return nil
 	}
